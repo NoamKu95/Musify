@@ -33,6 +33,7 @@
 		438E787928660F1500149B41 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 438E787828660F1500149B41 /* Auth.storyboard */; };
 		438E787B28660F3200149B41 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438E787A28660F3200149B41 /* SplashViewController.swift */; };
 		438E787D2866125400149B41 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438E787C2866125400149B41 /* Constants.swift */; };
+		438E787F28662C1700149B41 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438E787E28662C1700149B41 /* AuthResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		438E787828660F1500149B41 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		438E787A28660F3200149B41 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		438E787C2866125400149B41 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		438E787E28662C1700149B41 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				438E7872286606B600149B41 /* AudioTrack.swift */,
 				438E7874286606C600149B41 /* Artist.swift */,
 				438E7876286606DE00149B41 /* UserProfile.swift */,
+				438E787E28662C1700149B41 /* AuthResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -122,15 +125,10 @@
 			isa = PBXGroup;
 			children = (
 				438E783F2865FF0900149B41 /* MyTabBarController.swift */,
+				438E78802866306F00149B41 /* Auth */,
 				438E785B2866051D00149B41 /* Main Screens */,
-				438E785C2866058E00149B41 /* AuthViewController.swift */,
-				438E785E286605A200149B41 /* WelcomeViewController.swift */,
-				438E7860286605C200149B41 /* SettingsViewController.swift */,
-				438E7862286605D400149B41 /* ProfileViewController.swift */,
-				438E7864286605E900149B41 /* PlayerViewController.swift */,
-				438E7866286605FD00149B41 /* PlaylistViewController.swift */,
-				438E787A28660F3200149B41 /* SplashViewController.swift */,
-				438E78682866061500149B41 /* SearchResultsViewController.swift */,
+				438E78812866309300149B41 /* Music */,
+				438E7882286630B000149B41 /* User */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -167,8 +165,8 @@
 			children = (
 				438E783B2865FF0900149B41 /* AppDelegate.swift */,
 				438E783D2865FF0900149B41 /* SceneDelegate.swift */,
-				438E78442865FF0B00149B41 /* Assets.xcassets */,
 				438E787C2866125400149B41 /* Constants.swift */,
+				438E78442865FF0B00149B41 /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -181,6 +179,35 @@
 				438E78592866050800149B41 /* LibraryViewController.swift */,
 			);
 			path = "Main Screens";
+			sourceTree = "<group>";
+		};
+		438E78802866306F00149B41 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				438E787A28660F3200149B41 /* SplashViewController.swift */,
+				438E785E286605A200149B41 /* WelcomeViewController.swift */,
+				438E785C2866058E00149B41 /* AuthViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		438E78812866309300149B41 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				438E7864286605E900149B41 /* PlayerViewController.swift */,
+				438E7866286605FD00149B41 /* PlaylistViewController.swift */,
+				438E78682866061500149B41 /* SearchResultsViewController.swift */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		438E7882286630B000149B41 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				438E7862286605D400149B41 /* ProfileViewController.swift */,
+				438E7860286605C200149B41 /* SettingsViewController.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +303,7 @@
 				438E7867286605FD00149B41 /* PlaylistViewController.swift in Sources */,
 				438E7856286604AF00149B41 /* HomeViewController.swift in Sources */,
 				438E7865286605E900149B41 /* PlayerViewController.swift in Sources */,
+				438E787F28662C1700149B41 /* AuthResponse.swift in Sources */,
 				438E7861286605C200149B41 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
