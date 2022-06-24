@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qqI-qY-yVv">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Tab Bar Controller-->
+        <scene sceneID="APO-Mj-1wg">
+            <objects>
+                <tabBarController storyboardIdentifier="MyTabBarController" modalPresentationStyle="fullScreen" id="qqI-qY-yVv" customClass="MyTabBarController" customModule="Musify" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a5K-T4-lw5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="El0-jr-xwj" kind="relationship" relationship="viewControllers" id="pGf-gt-Am9"/>
+                        <segue destination="MCi-rR-IfP" kind="relationship" relationship="viewControllers" id="34c-t7-vmh"/>
+                        <segue destination="b75-EC-viQ" kind="relationship" relationship="viewControllers" id="zLN-Qw-vip"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yN1-qM-10M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35" y="796"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="RFd-7K-GfV">
+            <objects>
+                <viewController id="6MN-aM-ta3" customClass="HomeViewController" customModule="Musify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bDu-q1-UXk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="4AB-Bi-Xbk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yn8-by-SNg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zzc-Gx-nf1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-813" y="2304"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="hAN-lb-OtW">
+            <objects>
+                <navigationController id="El0-jr-xwj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="house" catalog="system" id="R7w-eD-pNX"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="07i-bL-a1D">
+                        <rect key="frame" x="0.0" y="44" width="414" height="103"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.34329531860000001" green="0.37804168339999999" blue="0.94716221089999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6MN-aM-ta3" kind="relationship" relationship="rootViewController" id="0Hx-1N-zD7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Owa-Lt-r9C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-813" y="1527"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="jwq-f8-MtH">
+            <objects>
+                <viewController id="UQm-Ya-1nN" customClass="SearchViewController" customModule="Musify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4So-B1-CJx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XGT-ye-6oL"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cMd-vl-ZCD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zYR-BJ-Etu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="319" y="2304"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="04n-TX-wA8">
+            <objects>
+                <navigationController id="MCi-rR-IfP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="EQT-3y-6nr"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="WKq-Pe-pyS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="103"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="UQm-Ya-1nN" kind="relationship" relationship="rootViewController" id="vdx-v5-t5k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G71-5q-owU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="320" y="1527"/>
+        </scene>
+        <!--Library-->
+        <scene sceneID="2CQ-5L-hJG">
+            <objects>
+                <navigationController id="b75-EC-viQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Library" image="music.note.list" catalog="system" id="Kpz-bp-5oK"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="vwr-J7-zmG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="103"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="aBX-dz-gwZ" kind="relationship" relationship="rootViewController" id="AsH-z8-1m4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fl7-PN-zsm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1407" y="1527"/>
+        </scene>
+        <!--Library View Controller-->
+        <scene sceneID="zIm-Ia-7mH">
+            <objects>
+                <viewController id="aBX-dz-gwZ" customClass="LibraryViewController" customModule="Musify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YjP-mR-wbr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="coJ-KE-BdU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9G4-no-Ccu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jfs-Dr-SeV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1406" y="2304"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="music.note.list" catalog="system" width="128" height="115"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
