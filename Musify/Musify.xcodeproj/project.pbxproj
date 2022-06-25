@@ -34,9 +34,13 @@
 		438E787B28660F3200149B41 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438E787A28660F3200149B41 /* SplashViewController.swift */; };
 		438E787D2866125400149B41 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438E787C2866125400149B41 /* Constants.swift */; };
 		438E787F28662C1700149B41 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438E787E28662C1700149B41 /* AuthResponse.swift */; };
+		43C9B9B828665815000E3D7D /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C9B9B728665815000E3D7D /* SettingsModel.swift */; };
+		4568E3B9152D4F1A51291D69 /* Pods_Musify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13A5421DB8698B10A5F344D8 /* Pods_Musify.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13A5421DB8698B10A5F344D8 /* Pods_Musify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Musify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A25E8298480862AEF81E5F1 /* Pods-Musify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musify.release.xcconfig"; path = "Target Support Files/Pods-Musify/Pods-Musify.release.xcconfig"; sourceTree = "<group>"; };
 		438E78382865FF0900149B41 /* Musify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		438E783B2865FF0900149B41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		438E783D2865FF0900149B41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 		438E787A28660F3200149B41 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		438E787C2866125400149B41 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		438E787E28662C1700149B41 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		43C9B9B728665815000E3D7D /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		D8EA6464F3B61F3BD92ADDC3 /* Pods-Musify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musify.debug.xcconfig"; path = "Target Support Files/Pods-Musify/Pods-Musify.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4568E3B9152D4F1A51291D69 /* Pods_Musify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +91,8 @@
 			children = (
 				438E783A2865FF0900149B41 /* Musify */,
 				438E78392865FF0900149B41 /* Products */,
+				C3E3E007EAFAAA3D65A00089 /* Pods */,
+				A9DC8FEFF6194259C42E9030 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +126,7 @@
 				438E7874286606C600149B41 /* Artist.swift */,
 				438E7876286606DE00149B41 /* UserProfile.swift */,
 				438E787E28662C1700149B41 /* AuthResponse.swift */,
+				43C9B9B728665815000E3D7D /* SettingsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,6 +220,24 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		A9DC8FEFF6194259C42E9030 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13A5421DB8698B10A5F344D8 /* Pods_Musify.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3E3E007EAFAAA3D65A00089 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D8EA6464F3B61F3BD92ADDC3 /* Pods-Musify.debug.xcconfig */,
+				3A25E8298480862AEF81E5F1 /* Pods-Musify.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,9 +245,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 438E784C2865FF0B00149B41 /* Build configuration list for PBXNativeTarget "Musify" */;
 			buildPhases = (
+				95925892C5FDC23EF317EDC9 /* [CP] Check Pods Manifest.lock */,
 				438E78342865FF0900149B41 /* Sources */,
 				438E78352865FF0900149B41 /* Frameworks */,
 				438E78362865FF0900149B41 /* Resources */,
+				C0A6D87003A64CEFA6042668 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -277,11 +307,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		95925892C5FDC23EF317EDC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Musify-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0A6D87003A64CEFA6042668 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Musify/Pods-Musify-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Musify/Pods-Musify-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Musify/Pods-Musify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		438E78342865FF0900149B41 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43C9B9B828665815000E3D7D /* SettingsModel.swift in Sources */,
 				438E7858286604E000149B41 /* SearchViewController.swift in Sources */,
 				438E787D2866125400149B41 /* Constants.swift in Sources */,
 				438E7871286606A000149B41 /* Playlist.swift in Sources */,
@@ -446,6 +519,7 @@
 		};
 		438E784D2865FF0B00149B41 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8EA6464F3B61F3BD92ADDC3 /* Pods-Musify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -474,6 +548,7 @@
 		};
 		438E784E2865FF0B00149B41 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A25E8298480862AEF81E5F1 /* Pods-Musify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -13,4 +13,8 @@ class HomeViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func profileTapped(_ sender: UIButton) {
+        self.performSegue(withIdentifier: Constants.Segues.HOME_TO_SETTINGS, sender: self)
+    }
 }
