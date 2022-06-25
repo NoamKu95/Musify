@@ -15,6 +15,12 @@ struct Constants {
         static let HOME_TO_SETTINGS = "homeToSettings"
         static let SETTINGS_TO_PROFILE = "settingsToProfile"
     }
+    
+    struct Cells {
+        static let NEW_RELEASES = "newReleases_Cell"
+        static let FEATURED_PLAYLIST = "featuredPlaylist_Cell"
+        static let RECOMMENDATION = "recommendation_Cell"
+    }
 
     
     struct API {

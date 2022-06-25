@@ -34,9 +34,13 @@
                     <view key="view" contentMode="scaleToFill" id="bDu-q1-UXk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSR-dA-Lt6">
-                                <rect key="frame" x="169" y="375" width="78" height="31"/>
+                        <viewLayoutGuide key="safeArea" id="4AB-Bi-Xbk"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yn8-by-SNg">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="4K8-rv-52t">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="YSR-dA-Lt6">
+                                <rect key="frame" x="20" y="5" width="87" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Settings"/>
@@ -44,18 +48,15 @@
                                     <action selector="profileTapped:" destination="6MN-aM-ta3" eventType="touchUpInside" id="WFD-b9-tTu"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="4AB-Bi-Xbk"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="yn8-by-SNg"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="uGi-Rs-KeS" kind="presentation" identifier="homeToSettings" modalPresentationStyle="fullScreen" id="JxB-4J-c0Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zzc-Gx-nf1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-813" y="2304"/>
+            <point key="canvasLocation" x="-813.04347826086962" y="2303.5714285714284"/>
         </scene>
         <!--Item-->
         <scene sceneID="hAN-lb-OtW">
@@ -290,6 +291,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
