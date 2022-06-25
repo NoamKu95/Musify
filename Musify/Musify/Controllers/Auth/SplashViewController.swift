@@ -17,6 +17,7 @@ class SplashViewController: UIViewController {
         
         
         if AuthManager.shared.isSignedIn {
+            AuthManager.shared.refreshAccessTokenIfNeeded(completionHandler: nil)
             DispatchQueue.main.async {
                 let homepage = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyTabBarController")
                 self.present(homepage, animated: true, completion: nil)

@@ -102,25 +102,18 @@ class AuthManager {
         }
     }
     
-    func refreshAccessTokenIfNeeded(completionHandler: @escaping (Bool) -> ()) {
+    func refreshAccessTokenIfNeeded(completionHandler: ((Bool) -> Void)?) {
         guard !isRefreshingToken else {
             return
         }
         guard shouldRefreshToken else {
-            completionHandler(true)
+            completionHandler?(true)
             return
         }
         guard let refreshToken = self.refreshToken else {
             return
         }
 
-        requestTokenRefresh() { success in
-            
-        }
-    }
-    
-    func requestTokenRefresh(completionHandler: @escaping (Bool) -> ()) {
-        
         guard let url = URL(string: Constants.API.TOEKN_BASE_API_URL) else {
             return
         }
@@ -144,7 +137,7 @@ class AuthManager {
         let data = stringForAuthorization.data(using: .utf8)
         guard let base64String = data?.base64EncodedString() else {
             print("Failed to encode client id and secret for header request")
-            completionHandler(false)
+            completionHandler?(false)
             return
         }
         request.setValue("Basic \(base64String)", forHTTPHeaderField: "Authorization")
@@ -154,7 +147,7 @@ class AuthManager {
             self?.isRefreshingToken = false
             
             guard let data = data, error == nil else {
-                completionHandler(false)
+                completionHandler?(false)
                 return
             }
             do {
@@ -165,10 +158,10 @@ class AuthManager {
                 self?.onRefreshBlocks.removeAll()
                 
                 self?.cacheTokens(from: result)
-                completionHandler(true)
+                completionHandler?(true)
             } catch {
                 print(error.localizedDescription)
-                completionHandler(false)
+                completionHandler?(false)
             }
         }
         task.resume()
