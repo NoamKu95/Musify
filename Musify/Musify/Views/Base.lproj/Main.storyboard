@@ -52,6 +52,8 @@
                     </navigationItem>
                     <connections>
                         <segue destination="uGi-Rs-KeS" kind="presentation" identifier="homeToSettings" modalPresentationStyle="fullScreen" id="JxB-4J-c0Q"/>
+                        <segue destination="UEj-tB-qjM" kind="presentation" identifier="homepageToAlbum" modalPresentationStyle="fullScreen" id="3Uc-cZ-fFK"/>
+                        <segue destination="bxA-c5-DTF" kind="presentation" identifier="homepageToPlaylist" modalPresentationStyle="fullScreen" id="BDo-tE-Hot"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zzc-Gx-nf1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -279,9 +281,100 @@
             </objects>
             <point key="canvasLocation" x="-813.04347826086962" y="3062.9464285714284"/>
         </scene>
+        <!--Album View Controller-->
+        <scene sceneID="MGM-9T-1EM">
+            <objects>
+                <viewController id="UEj-tB-qjM" customClass="AlbumViewController" customModule="Musify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bwk-6Z-euY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HET-Io-8RI">
+                                <rect key="frame" x="118" y="114" width="178" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TO0-4b-0oq">
+                                <rect key="frame" x="20" y="183" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="CWL-tU-oJm"/>
+                                    <constraint firstAttribute="height" constant="374" id="FRf-Jn-tWC"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chevron.backward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IQ0-EL-CXg">
+                                <rect key="frame" x="20" y="46" width="47" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IAE-4P-zns"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TO0-4b-0oq" firstAttribute="top" secondItem="HET-Io-8RI" secondAttribute="bottom" constant="30" id="2N1-8b-hIy"/>
+                            <constraint firstItem="HET-Io-8RI" firstAttribute="centerX" secondItem="Bwk-6Z-euY" secondAttribute="centerX" id="afC-G5-KSf"/>
+                            <constraint firstItem="HET-Io-8RI" firstAttribute="top" secondItem="IAE-4P-zns" secondAttribute="top" constant="70" id="eZi-ei-40x"/>
+                            <constraint firstItem="TO0-4b-0oq" firstAttribute="centerX" secondItem="Bwk-6Z-euY" secondAttribute="centerX" id="o1F-re-gWI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="albumImage" destination="TO0-4b-0oq" id="UuT-hH-UXC"/>
+                        <outlet property="albumName" destination="HET-Io-8RI" id="98H-gP-XCk"/>
+                        <outlet property="backButton" destination="IQ0-EL-CXg" id="sO6-gs-CDs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0gv-XP-fFY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="318.84057971014494" y="3062.9464285714284"/>
+        </scene>
+        <!--Playlist View Controller-->
+        <scene sceneID="8TE-4c-TgL">
+            <objects>
+                <viewController id="bxA-c5-DTF" customClass="PlaylistViewController" customModule="Musify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wdv-yg-eT4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playlist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrf-VU-YUC">
+                                <rect key="frame" x="113.5" y="114" width="187" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pjK-zV-rqW">
+                                <rect key="frame" x="20" y="183" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="7qV-3o-aJa"/>
+                                    <constraint firstAttribute="height" constant="374" id="xRk-hz-o4h"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chevron.backward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="M3k-tQ-49h">
+                                <rect key="frame" x="20" y="46" width="47" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Lbu-JY-ngq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Yrf-VU-YUC" firstAttribute="top" secondItem="Lbu-JY-ngq" secondAttribute="top" constant="70" id="6YH-c0-Dcs"/>
+                            <constraint firstItem="Yrf-VU-YUC" firstAttribute="centerX" secondItem="wdv-yg-eT4" secondAttribute="centerX" id="KCD-Vt-els"/>
+                            <constraint firstItem="pjK-zV-rqW" firstAttribute="top" secondItem="Yrf-VU-YUC" secondAttribute="bottom" constant="30" id="ddj-kb-D0V"/>
+                            <constraint firstItem="pjK-zV-rqW" firstAttribute="centerX" secondItem="wdv-yg-eT4" secondAttribute="centerX" id="f0a-CC-WJX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="M3k-tQ-49h" id="tGS-p3-kN3"/>
+                        <outlet property="playlistImage" destination="pjK-zV-rqW" id="up2-Su-Qmu"/>
+                        <outlet property="playlistName" destination="Yrf-VU-YUC" id="hqh-Mr-0Xl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YgM-zM-sJv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1049" y="3063"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.right.circle" catalog="system" width="128" height="121"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="music.note.list" catalog="system" width="128" height="115"/>

@@ -14,6 +14,9 @@ struct Constants {
         static let WELCOME_TO_AUTH = "welcomeToAuth"
         static let HOME_TO_SETTINGS = "homeToSettings"
         static let SETTINGS_TO_PROFILE = "settingsToProfile"
+        static let HOMEPAGE_TO_ALBUM = "homepageToAlbum"
+        static let HOMEPAGE_TO_PLAYLIST = "homepageToPlaylist"
+        static let HOMEPAGE_TO_AUDIO_TRACK = ""
     }
     
     struct Cells {
