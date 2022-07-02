@@ -19,6 +19,8 @@
 		438A16C9286F0C8500EC7EB1 /* FeaturedPlaylistCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A16C8286F0C8500EC7EB1 /* FeaturedPlaylistCellViewModel.swift */; };
 		438A16CB286F0CD100EC7EB1 /* RecommendedTrackCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A16CA286F0CD100EC7EB1 /* RecommendedTrackCellViewModel.swift */; };
 		438A16CE286F17B400EC7EB1 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A16CD286F17B400EC7EB1 /* AlbumViewController.swift */; };
+		438A16D0287069DA00EC7EB1 /* AlbumDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A16CF287069DA00EC7EB1 /* AlbumDetailsResponse.swift */; };
+		438A16D228706C2E00EC7EB1 /* PlaylistDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A16D128706C2E00EC7EB1 /* PlaylistDetailsResponse.swift */; };
 		438E783C2865FF0900149B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438E783B2865FF0900149B41 /* AppDelegate.swift */; };
 		438E783E2865FF0900149B41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438E783D2865FF0900149B41 /* SceneDelegate.swift */; };
 		438E78402865FF0900149B41 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438E783F2865FF0900149B41 /* MyTabBarController.swift */; };
@@ -67,6 +69,8 @@
 		438A16C8286F0C8500EC7EB1 /* FeaturedPlaylistCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistCellViewModel.swift; sourceTree = "<group>"; };
 		438A16CA286F0CD100EC7EB1 /* RecommendedTrackCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTrackCellViewModel.swift; sourceTree = "<group>"; };
 		438A16CD286F17B400EC7EB1 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		438A16CF287069DA00EC7EB1 /* AlbumDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsResponse.swift; sourceTree = "<group>"; };
+		438A16D128706C2E00EC7EB1 /* PlaylistDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDetailsResponse.swift; sourceTree = "<group>"; };
 		438E78382865FF0900149B41 /* Musify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		438E783B2865FF0900149B41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		438E783D2865FF0900149B41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 				438A16C0286DE0BE00EC7EB1 /* FeaturedPlaylistResponse.swift */,
 				438A16C2286DE0F000EC7EB1 /* RecommendedGenresResponse.swift */,
 				438A16C4286DE10F00EC7EB1 /* RecommendationsResponse.swift */,
+				438A16CF287069DA00EC7EB1 /* AlbumDetailsResponse.swift */,
+				438A16D128706C2E00EC7EB1 /* PlaylistDetailsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -426,10 +432,12 @@
 				438E786F2866067200149B41 /* HapticsManager.swift in Sources */,
 				438E7873286606B600149B41 /* AudioTrack.swift in Sources */,
 				438A16C5286DE10F00EC7EB1 /* RecommendationsResponse.swift in Sources */,
+				438A16D228706C2E00EC7EB1 /* PlaylistDetailsResponse.swift in Sources */,
 				438E78402865FF0900149B41 /* MyTabBarController.swift in Sources */,
 				438A16BF286DE09B00EC7EB1 /* NewReleasesResponse.swift in Sources */,
 				438E783C2865FF0900149B41 /* AppDelegate.swift in Sources */,
 				438E785D2866058E00149B41 /* AuthViewController.swift in Sources */,
+				438A16D0287069DA00EC7EB1 /* AlbumDetailsResponse.swift in Sources */,
 				438A16B7286DDA2600EC7EB1 /* NewReleaseCollectionViewCell.swift in Sources */,
 				438E787B28660F3200149B41 /* SplashViewController.swift in Sources */,
 				438A16C7286DEB3400EC7EB1 /* Extensions.swift in Sources */,

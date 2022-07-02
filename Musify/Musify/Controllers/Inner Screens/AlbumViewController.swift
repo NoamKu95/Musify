@@ -19,12 +19,12 @@ class AlbumViewController: UIViewController {
         super.viewDidLoad()
         
         initiateUIElements()
+        getAlbumData()
     }
     
     private func initiateUIElements() {
         
         albumName.text = album?.name
-        //albumImage.image = UIImage(album?.images.first?.url)
         
         backButton.addGestureRecognizer(UITapGestureRecognizer(target: backButton, action: #selector(popScreenToGoBack)))
         backButton.isUserInteractionEnabled = true
@@ -34,5 +34,20 @@ class AlbumViewController: UIViewController {
     
     @objc func popScreenToGoBack(tapGestureRecognizer: UITapGestureRecognizer) {
         self.dismiss(animated: true)
+    }
+    
+    private func getAlbumData() {
+        if let album = album {
+            ApiCaller.shared.getAlbumDetails(for: album) { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let model):
+                        break
+                    case .failure(let error):
+                        break
+                    }
+                }
+            }
+        }
     }
 }

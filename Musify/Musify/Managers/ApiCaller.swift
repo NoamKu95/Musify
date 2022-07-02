@@ -111,6 +111,41 @@ class ApiCaller {
         }
     }
     
+    public func getAlbumDetails(for album: Album, completionHandler: @escaping (Result<AlbumDetailsResponse,Error>) -> ()) {
+        createRequest(with: URL(string: Constants.API.REQUESTS_BASE_API_URL + "/albums/\(album.id)"), ofType: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completionHandler(.failure(APIError.failedToGetData))
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode(AlbumDetailsResponse.self, from: data)
+                    completionHandler(.success(result))
+                } catch {
+                    completionHandler(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    public func getPlaylistDetails(for playlist: Playlist, completionHandler: @escaping (Result<PlaylistDetailsResponse,Error>) -> ()) {
+        createRequest(with: URL(string: Constants.API.REQUESTS_BASE_API_URL + "/playlists/\(playlist.id)"), ofType: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completionHandler(.failure(APIError.failedToGetData))
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode(PlaylistDetailsResponse.self, from: data)
+                    completionHandler(.success(result))
+                } catch {
+                    completionHandler(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
     
     private func createRequest(with url: URL?, ofType type: HTTPMethod, completiongHandler: @escaping (URLRequest) -> ()) {
         guard let apiURL = url else {
