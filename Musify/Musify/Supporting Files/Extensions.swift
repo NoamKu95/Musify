@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+
+// MARK: - Get Views Boundries
 extension UIView {
     var width: CGFloat {
         return frame.size.width
@@ -29,6 +31,7 @@ extension UIView {
     }
 }
 
+// MARK: - Turn HEX color to UIColor
 func hexStringToUIColor (hex:String) -> UIColor {
     var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
@@ -51,6 +54,7 @@ func hexStringToUIColor (hex:String) -> UIColor {
     )
 }
 
+// MARK: - Determine the Status Bar color
 func setStatusBarColor(viewController: UIViewController, hexColor: String) {
     if #available(iOS 13.0, *) {
         let app = UIApplication.shared
