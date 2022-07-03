@@ -10,6 +10,7 @@ import SDWebImage
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var headerView: HeaderView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -67,6 +68,7 @@ class ProfileViewController: UIViewController {
     }
     
     func initiateUIElements() {
+        headerView.initView(headerType: .backOnly)
         profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.height/2
     }
 }

@@ -16,6 +16,8 @@ enum BrowseSectionType {
 
 class HomeViewController : UIViewController {
     
+    @IBOutlet weak var headerView: HeaderView!
+    
     private var spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView()
         spinner.tintColor = .label
@@ -45,27 +47,35 @@ class HomeViewController : UIViewController {
         fetchData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //setStatusBarColor(viewController: self, hexColor: "000000")
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        collectionView.frame = view.bounds
+        collectionView.frame = view.alignmentRect(forFrame: CGRect(x: 0, y: headerView.bottom, width: view.width, height: view.height-headerView.height))
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 200).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 100).isActive = true
     }
     
     
     func initialteUIElements() {
-        configureCollectionView()
+        // Header
+        headerView.initView(delegate: self, headerType: .homepage)
+        
+        // Spinner
         view.addSubview(spinner)
-    }
-    
-    func configureCollectionView() {
+        
+        // CollectionView
         view.addSubview(collectionView)
         collectionView.register(NewReleaseCollectionViewCell.self, forCellWithReuseIdentifier: NewReleaseCollectionViewCell.identifier)
         collectionView.register(RecommendedTrackCollectionViewCell.self, forCellWithReuseIdentifier: RecommendedTrackCollectionViewCell.identifier)
         collectionView.register(FeaturedPlaylistCollectionViewCell.self, forCellWithReuseIdentifier: FeaturedPlaylistCollectionViewCell.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.backgroundColor = .lightGray
     }
-    
     
     func fetchData() {
         let group = DispatchGroup()
@@ -242,10 +252,6 @@ class HomeViewController : UIViewController {
             return section
         }
     }
-    
-    @IBAction func profileTapped(_ sender: UIButton) {
-        self.performSegue(withIdentifier: Constants.Segues.HOME_TO_SETTINGS, sender: self)
-    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -269,7 +275,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
+        
         let type = sections[indexPath.section]
         switch type {
             
@@ -325,5 +331,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             break
         }
         
+    }
+}
+
+// MARK: - HeaderViewDelegate
+extension HomeViewController : HeaderViewDelegate {
+    
+    func settingsButtonPressed() {
+        self.performSegue(withIdentifier: Constants.Segues.HOME_TO_SETTINGS, sender: self)
     }
 }

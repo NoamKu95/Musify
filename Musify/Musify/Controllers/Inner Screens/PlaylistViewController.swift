@@ -27,6 +27,7 @@ class PlaylistViewController: UIViewController {
     
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initiateUIElements()
@@ -36,7 +37,7 @@ class PlaylistViewController: UIViewController {
     private func initiateUIElements() {
         
         // Header
-        headerView.initView(delegate: self)
+        headerView.initView(delegate: self, headerType: .share)
         
         // Playlist Info
         playlistHeader.initView(delegate: self, playlist: self.playlist)
@@ -56,10 +57,6 @@ class PlaylistViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.topAnchor.constraint(equalTo: playlistHeader.bottomAnchor, constant: 12).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-    }
-    
-    @objc func popScreenToGoBack(tapGestureRecognizer: UITapGestureRecognizer) {
-        self.dismiss(animated: true)
     }
     
     private func getPlaylistData() {

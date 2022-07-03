@@ -9,6 +9,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    @IBOutlet weak var headerView: HeaderView!
     @IBOutlet weak var tableView: UITableView!
     
     private var sections = [Section]()
@@ -19,6 +20,7 @@ class SettingsViewController: UIViewController {
         configureModels()
         tableView.delegate = self
         tableView.dataSource = self
+        headerView.initView(delegate: self, headerType: .backOnly)
     }
     
     func configureModels() {
@@ -35,11 +37,6 @@ class SettingsViewController: UIViewController {
                         Option(title: "sign Out", handler: { [weak self] in
                             print("log user out")
                         })]))
-    }
-    
-    
-    @IBAction func profileTapped(_ sender: UIButton) {
-        self.performSegue(withIdentifier: Constants.Segues.SETTINGS_TO_PROFILE, sender: self)
     }
     
 }
@@ -81,4 +78,12 @@ extension SettingsViewController: UITableViewDataSource {
         return model.title
     }
     
+}
+
+// MARK: - HeaderViewDelegate
+extension SettingsViewController : HeaderViewDelegate {
+    
+    func backButtonPressed() {
+        self.dismiss(animated: true)
+    }
 }
