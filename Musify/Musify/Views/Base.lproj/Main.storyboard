@@ -334,42 +334,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playlist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrf-VU-YUC">
-                                <rect key="frame" x="113.5" y="114" width="187" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pjK-zV-rqW">
-                                <rect key="frame" x="20" y="183" width="374" height="374"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOM-5y-6mH" customClass="HeaderView" customModule="Musify" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="7qV-3o-aJa"/>
-                                    <constraint firstAttribute="height" constant="374" id="xRk-hz-o4h"/>
+                                    <constraint firstAttribute="height" constant="50" id="Ofq-9X-8FM"/>
                                 </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chevron.backward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="M3k-tQ-49h">
-                                <rect key="frame" x="20" y="46" width="47" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNc-2n-Uqr" customClass="PlaylistHeaderView" customModule="Musify" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="110" width="414" height="250"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="KhF-tb-MdF"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lbu-JY-ngq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Yrf-VU-YUC" firstAttribute="top" secondItem="Lbu-JY-ngq" secondAttribute="top" constant="70" id="6YH-c0-Dcs"/>
-                            <constraint firstItem="Yrf-VU-YUC" firstAttribute="centerX" secondItem="wdv-yg-eT4" secondAttribute="centerX" id="KCD-Vt-els"/>
-                            <constraint firstItem="pjK-zV-rqW" firstAttribute="top" secondItem="Yrf-VU-YUC" secondAttribute="bottom" constant="30" id="ddj-kb-D0V"/>
-                            <constraint firstItem="pjK-zV-rqW" firstAttribute="centerX" secondItem="wdv-yg-eT4" secondAttribute="centerX" id="f0a-CC-WJX"/>
+                            <constraint firstItem="FNc-2n-Uqr" firstAttribute="leading" secondItem="Lbu-JY-ngq" secondAttribute="leading" id="Un0-mK-z0p"/>
+                            <constraint firstItem="TOM-5y-6mH" firstAttribute="leading" secondItem="wdv-yg-eT4" secondAttribute="leading" id="ZPS-3t-c3k"/>
+                            <constraint firstItem="TOM-5y-6mH" firstAttribute="top" secondItem="Lbu-JY-ngq" secondAttribute="top" id="cqS-EE-ogY"/>
+                            <constraint firstItem="FNc-2n-Uqr" firstAttribute="top" secondItem="TOM-5y-6mH" secondAttribute="bottom" constant="16" id="feS-XT-Q97"/>
+                            <constraint firstItem="FNc-2n-Uqr" firstAttribute="trailing" secondItem="Lbu-JY-ngq" secondAttribute="trailing" id="qP0-JE-L0S"/>
+                            <constraint firstAttribute="trailing" secondItem="TOM-5y-6mH" secondAttribute="trailing" id="zUe-aY-Wdc"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="M3k-tQ-49h" id="tGS-p3-kN3"/>
-                        <outlet property="playlistImage" destination="pjK-zV-rqW" id="up2-Su-Qmu"/>
-                        <outlet property="playlistName" destination="Yrf-VU-YUC" id="hqh-Mr-0Xl"/>
+                        <outlet property="headerView" destination="TOM-5y-6mH" id="adG-EU-LTg"/>
+                        <outlet property="playlistHeader" destination="FNc-2n-Uqr" id="VS4-gA-gZS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YgM-zM-sJv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="3063"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="3062.9464285714284"/>
         </scene>
     </scenes>
     <resources>
@@ -387,6 +385,9 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

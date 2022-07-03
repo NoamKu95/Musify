@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaylistHeaderView" customModule="Musify" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="mUm-vO-3ZZ"/>
+                <outlet property="playAllButton" destination="vbU-CM-KCT" id="6Ys-N5-D13"/>
+                <outlet property="playlistDescription" destination="qq9-G7-BKz" id="SBs-Ee-D36"/>
+                <outlet property="playlistImage" destination="wHm-mE-Uot" id="q65-wk-ak2"/>
+                <outlet property="playlistName" destination="day-0P-WWx" id="wc6-yk-LDt"/>
+                <outlet property="playlistOwner" destination="kM3-Ll-ELZ" id="uWG-y2-Oid"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="345" height="316"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scribble.variable" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wHm-mE-Uot">
+                    <rect key="frame" x="0.0" y="-0.5" width="345" height="139.5"/>
+                    <color key="tintColor" red="0.90196073060000004" green="0.53333336109999996" blue="0.231372565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="140" id="QAz-Je-f6x"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playlist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="day-0P-WWx">
+                    <rect key="frame" x="118.5" y="148" width="108" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kM3-Ll-ELZ">
+                    <rect key="frame" x="12" y="217.5" width="239" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vbU-CM-KCT">
+                    <rect key="frame" x="263" y="189.5" width="70" height="69"/>
+                    <color key="tintColor" red="0.90196073060000004" green="0.53333336109999996" blue="0.231372565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="j48-xK-1rg"/>
+                        <constraint firstAttribute="height" constant="70" id="jsz-i4-WJx"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qq9-G7-BKz">
+                    <rect key="frame" x="12" y="189" width="239" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="day-0P-WWx" firstAttribute="top" secondItem="wHm-mE-Uot" secondAttribute="bottom" constant="8" id="48b-IR-euE"/>
+                <constraint firstItem="qq9-G7-BKz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="A35-qy-KoR"/>
+                <constraint firstItem="wHm-mE-Uot" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CoM-MJ-RTT"/>
+                <constraint firstItem="vbU-CM-KCT" firstAttribute="leading" secondItem="qq9-G7-BKz" secondAttribute="trailing" constant="12" id="DIJ-io-lqo"/>
+                <constraint firstItem="vbU-CM-KCT" firstAttribute="leading" secondItem="kM3-Ll-ELZ" secondAttribute="trailing" constant="12" id="DdX-Tp-MQ9"/>
+                <constraint firstItem="wHm-mE-Uot" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="HjO-ZJ-6rE"/>
+                <constraint firstItem="qq9-G7-BKz" firstAttribute="top" secondItem="day-0P-WWx" secondAttribute="bottom" constant="20" id="Mue-GT-eiW"/>
+                <constraint firstItem="wHm-mE-Uot" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="YmN-3s-xE9"/>
+                <constraint firstItem="day-0P-WWx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="a9V-tZ-pmk"/>
+                <constraint firstItem="kM3-Ll-ELZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="aXw-5C-Zyp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vbU-CM-KCT" secondAttribute="trailing" constant="12" id="ehP-eo-o10"/>
+                <constraint firstItem="kM3-Ll-ELZ" firstAttribute="top" secondItem="qq9-G7-BKz" secondAttribute="bottom" constant="8" id="gpm-yw-1qd"/>
+                <constraint firstItem="vbU-CM-KCT" firstAttribute="top" secondItem="day-0P-WWx" secondAttribute="bottom" constant="20" id="sC9-Lc-5vn"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-31.159420289855074" y="-42.1875"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="scribble.variable" catalog="system" width="128" height="118"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
