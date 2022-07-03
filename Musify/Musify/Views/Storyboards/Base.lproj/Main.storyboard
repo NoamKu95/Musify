@@ -98,14 +98,28 @@
                     <view key="view" contentMode="scaleToFill" id="4So-B1-CJx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7wb-J1-3Ig" customClass="HeaderView" customModule="Musify" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                                <color key="backgroundColor" red="0.14779434869999999" green="0.16275323720000001" blue="0.40776909719999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="c9R-Vn-DfQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="XGT-ye-6oL"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7wb-J1-3Ig" firstAttribute="leading" secondItem="4So-B1-CJx" secondAttribute="leading" id="9hS-Mg-VKD"/>
+                            <constraint firstAttribute="trailing" secondItem="7wb-J1-3Ig" secondAttribute="trailing" id="Q3X-8n-ofZ"/>
+                            <constraint firstItem="7wb-J1-3Ig" firstAttribute="top" secondItem="XGT-ye-6oL" secondAttribute="top" id="pap-hA-pd6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cMd-vl-ZCD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYR-BJ-Etu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="319" y="2304"/>
+            <point key="canvasLocation" x="318.84057971014494" y="2303.5714285714284"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="04n-TX-wA8">
@@ -160,14 +174,28 @@
                     <view key="view" contentMode="scaleToFill" id="YjP-mR-wbr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2O-JX-O3H" customClass="HeaderView" customModule="Musify" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                                <color key="backgroundColor" red="0.14779434869999999" green="0.16275323720000001" blue="0.40776909719999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="x9Z-0A-vfI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="coJ-KE-BdU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="N2O-JX-O3H" secondAttribute="trailing" id="1vT-BC-esW"/>
+                            <constraint firstItem="N2O-JX-O3H" firstAttribute="leading" secondItem="YjP-mR-wbr" secondAttribute="leading" id="UQh-Q2-4OH"/>
+                            <constraint firstItem="N2O-JX-O3H" firstAttribute="top" secondItem="coJ-KE-BdU" secondAttribute="top" id="xHP-8K-SkU"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9G4-no-Ccu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jfs-Dr-SeV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1406" y="2304"/>
+            <point key="canvasLocation" x="1405.7971014492755" y="2303.5714285714284"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="R2P-Gv-qf1">
@@ -254,6 +282,7 @@
                         <outlet property="sideArrowImageView" destination="V6g-Z5-wxi" id="dJs-YT-ojj"/>
                         <outlet property="tableView" destination="zgI-M5-p7g" id="7yO-DJ-lsz"/>
                         <outlet property="userNameLabel" destination="jH6-Cd-BHZ" id="Lnw-OK-XrV"/>
+                        <segue destination="WAU-zc-8fz" kind="presentation" identifier="profileToEditProfile" modalPresentationStyle="fullScreen" id="riX-D4-sQZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSs-a7-D7a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -320,37 +349,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HET-Io-8RI">
-                                <rect key="frame" x="118" y="114" width="178" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TO0-4b-0oq">
-                                <rect key="frame" x="20" y="183" width="374" height="374"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5be-HY-U1l" customClass="HeaderView" customModule="Musify" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <color key="backgroundColor" red="0.14779434869999999" green="0.16275323720000001" blue="0.40776909719999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="CWL-tU-oJm"/>
-                                    <constraint firstAttribute="height" constant="374" id="FRf-Jn-tWC"/>
+                                    <constraint firstAttribute="height" constant="50" id="hdo-R7-csL"/>
                                 </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chevron.backward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IQ0-EL-CXg">
-                                <rect key="frame" x="20" y="46" width="47" height="37"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kGA-dn-tdo" customClass="PlaylistAlbumHeaderView" customModule="Musify" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="102" width="414" height="260"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IAE-4P-zns"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TO0-4b-0oq" firstAttribute="top" secondItem="HET-Io-8RI" secondAttribute="bottom" constant="30" id="2N1-8b-hIy"/>
-                            <constraint firstItem="HET-Io-8RI" firstAttribute="centerX" secondItem="Bwk-6Z-euY" secondAttribute="centerX" id="afC-G5-KSf"/>
-                            <constraint firstItem="HET-Io-8RI" firstAttribute="top" secondItem="IAE-4P-zns" secondAttribute="top" constant="70" id="eZi-ei-40x"/>
-                            <constraint firstItem="TO0-4b-0oq" firstAttribute="centerX" secondItem="Bwk-6Z-euY" secondAttribute="centerX" id="o1F-re-gWI"/>
+                            <constraint firstItem="5be-HY-U1l" firstAttribute="top" secondItem="IAE-4P-zns" secondAttribute="top" id="CMk-Xv-GTb"/>
+                            <constraint firstItem="5be-HY-U1l" firstAttribute="leading" secondItem="Bwk-6Z-euY" secondAttribute="leading" id="Lz8-nc-0zJ"/>
+                            <constraint firstAttribute="trailing" secondItem="5be-HY-U1l" secondAttribute="trailing" id="wKT-4V-DJj"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="albumImage" destination="TO0-4b-0oq" id="UuT-hH-UXC"/>
-                        <outlet property="albumName" destination="HET-Io-8RI" id="98H-gP-XCk"/>
-                        <outlet property="backButton" destination="IQ0-EL-CXg" id="sO6-gs-CDs"/>
+                        <outlet property="albumHeader" destination="kGA-dn-tdo" id="OeW-wZ-iNv"/>
+                        <outlet property="headerView" destination="5be-HY-U1l" id="C86-Gz-SLp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gv-XP-fFY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -367,12 +389,12 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOM-5y-6mH" customClass="HeaderView" customModule="Musify" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.14779434869999999" green="0.16275323720000001" blue="0.40776909719999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ofq-9X-8FM"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNc-2n-Uqr" customClass="PlaylistHeaderView" customModule="Musify" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNc-2n-Uqr" customClass="PlaylistAlbumHeaderView" customModule="Musify" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="110" width="414" height="250"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -400,23 +422,27 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="3062.9464285714284"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Profile View Controller-->
         <scene sceneID="SgO-dz-4B4">
             <objects>
-                <viewController id="WAU-zc-8fz" sceneMemberID="viewController">
+                <viewController id="WAU-zc-8fz" customClass="EditProfileViewController" customModule="Musify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4xM-o8-AUf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F4S-lr-yfB">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="smiley.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="F4S-lr-yfB">
                                 <rect key="frame" x="54" y="200" width="307" height="271"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.14779434869999999" green="0.16275323720000001" blue="0.40776909719999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lh8-3b-dqu">
                                 <rect key="frame" x="150" y="479" width="116" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Change Photo"/>
+                                <connections>
+                                    <action selector="changeImageButtonTapped:" destination="WAU-zc-8fz" eventType="touchUpInside" id="7kP-QG-Bvz"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZi-lP-7Kn" customClass="HeaderView" customModule="Musify" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
@@ -434,6 +460,10 @@
                             <constraint firstAttribute="trailing" secondItem="nZi-lP-7Kn" secondAttribute="trailing" id="fuB-UU-sYx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="headerView" destination="nZi-lP-7Kn" id="msI-6t-Hk5"/>
+                        <outlet property="profileImage" destination="F4S-lr-yfB" id="kXu-Yd-hkJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Y0-lI-myI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -441,12 +471,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="music.note.list" catalog="system" width="128" height="115"/>
         <image name="smiley" catalog="system" width="128" height="121"/>
+        <image name="smiley.fill" catalog="system" width="128" height="121"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

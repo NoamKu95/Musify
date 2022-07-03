@@ -7,26 +7,28 @@
 
 import UIKit
 
-protocol PlaylistHeaderViewDelegate {
+protocol PlaylistAlbumHeaderViewDelegate {
     func playAllButtonPressed()
 }
 
-class PlaylistHeaderView: UIView {
+class PlaylistAlbumHeaderView: UIView {
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var playlistImage: UIImageView!
-    @IBOutlet weak var playlistName: UILabel!
-    @IBOutlet weak var playlistDescription: UILabel!
-    @IBOutlet weak var playlistOwner: UILabel!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var owner: UILabel!
     @IBOutlet weak var playAllButton: UIImageView!
     
-    var delegate: PlaylistHeaderViewDelegate?
-    var playlist: Playlist?
+    var delegate: PlaylistAlbumHeaderViewDelegate?
     
-    func initView(delegate: PlaylistHeaderViewDelegate? = nil, playlist: Playlist? = nil) {
-        
+    var playlist: Playlist?
+    var album: Album?
+    
+    func initView(delegate: PlaylistAlbumHeaderViewDelegate? = nil, playlist: Playlist? = nil, album: Album? = nil) {
         self.delegate = delegate
         self.playlist = playlist
+        self.album = album
         commonInit()
     }
     
@@ -44,10 +46,17 @@ class PlaylistHeaderView: UIView {
         playAllButton.addGestureRecognizer(tapRecognizer1)
         
         // Populate Fields
-        playlistName.text = playlist?.name
-        playlistOwner.text = playlist?.owner.display_name
-        playlistDescription.text = playlist?.description
-        playlistImage.sd_setImage(with: URL(string: playlist?.images.first?.url ?? ""))
+        if let playlist = playlist {
+            name.text = playlist.name
+            owner.text = playlist.owner.display_name
+            descriptionLabel.text = playlist.description
+            image.sd_setImage(with: URL(string: playlist.images.first?.url ?? ""))
+        } else if let album = album {
+            name.text = album.name
+            
+            image.sd_setImage(with: URL(string: album.images.first?.url ?? ""))
+        }
+        
     }
     
     @objc func playAllButtonTapped(tapGestureRecognizer: UITapGestureRecognizer) {

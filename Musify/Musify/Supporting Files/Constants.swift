@@ -12,11 +12,14 @@ struct Constants {
     struct Segues {
         static let SPLASH_TO_WELCOME = "splashToWelcome"
         static let WELCOME_TO_AUTH = "welcomeToAuth"
+        
         static let HOME_TO_SETTINGS = "homeToSettings"
-        static let SETTINGS_TO_PROFILE = "settingsToProfile"
         static let HOMEPAGE_TO_ALBUM = "homepageToAlbum"
         static let HOMEPAGE_TO_PLAYLIST = "homepageToPlaylist"
         static let HOMEPAGE_TO_AUDIO_TRACK = ""
+        
+        static let SETTINGS_TO_PROFILE = "settingsToProfile"
+        static let PROFILE_TO_EDIT_PROFILE = "profileToEditProfile"
     }
     
     struct Cells {

@@ -14,7 +14,7 @@ class PlaylistViewController: UIViewController {
     
     
     @IBOutlet weak var headerView: HeaderView!
-    @IBOutlet weak var playlistHeader: PlaylistHeaderView!
+    @IBOutlet weak var playlistHeader: PlaylistAlbumHeaderView!
     
     
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewCompositionalLayout(sectionProvider:{ _, _ in
@@ -103,7 +103,7 @@ extension PlaylistViewController : UICollectionViewDelegate, UICollectionViewDat
 }
 
 // MARK: - PlaylistHeaderViewDelegate
-extension PlaylistViewController : PlaylistHeaderViewDelegate {
+extension PlaylistViewController : PlaylistAlbumHeaderViewDelegate {
     func playAllButtonPressed() {
         print("Button tapped")
     }

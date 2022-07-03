@@ -68,7 +68,7 @@ class ProfileViewController: UIViewController {
     }
     
     func initiateUIElements() {
-        headerView.initView(headerType: .backOnly)
+        headerView.initView(delegate: self, headerType: .backOnly)
         profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.height/2
     }
 }
@@ -91,4 +91,11 @@ extension ProfileViewController: UITableViewDataSource {
         return cell
     }
     
+}
+
+// MARK: - HeaderViewDelegate
+extension ProfileViewController : HeaderViewDelegate {
+    func backButtonPressed() {
+        self.dismiss(animated: true)
+    }
 }

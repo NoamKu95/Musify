@@ -20,7 +20,7 @@ class SettingsViewController: UIViewController {
         configureModels()
         tableView.delegate = self
         tableView.dataSource = self
-        headerView.initView(delegate: self, headerType: .backOnly)
+        headerView.initView(delegate: self, headerType: .backOnly, headerTitle: "Settings")
     }
     
     func configureModels() {
