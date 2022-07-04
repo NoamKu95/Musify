@@ -186,7 +186,7 @@ class HomeViewController : UIViewController {
         })))
         
         sections.append(.recommendedTracks(viewModels: tracks.compactMap({
-            return RecommendedTrackCellViewModel(name: $0.name, aristName: $0.artists.first?.name ?? "-", artworkURL: URL(string: $0.album?.images.first?.url ?? ""))
+            return RecommendedTrackCellViewModel(name: $0.name, artistName: $0.artists.first?.name ?? "-", artworkURL: URL(string: $0.album?.images.first?.url ?? ""))
         })))
         
         collectionView.reloadData()

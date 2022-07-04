@@ -27,6 +27,8 @@
 		438A16DF2871969500EC7EB1 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 438A16DE2871969500EC7EB1 /* HeaderView.xib */; };
 		438A16E32871D1C700EC7EB1 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A16E22871D1C700EC7EB1 /* EditProfileViewController.swift */; };
 		438A16E52871D4CF00EC7EB1 /* TitleHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A16E42871D4CF00EC7EB1 /* TitleHeaderCollectionReusableView.swift */; };
+		438A16E72872BD0D00EC7EB1 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A16E62872BD0D00EC7EB1 /* AlbumCollectionViewCell.swift */; };
+		438A16E92872BF6B00EC7EB1 /* AlbumCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438A16E82872BF6B00EC7EB1 /* AlbumCollectionViewCellViewModel.swift */; };
 		438E783C2865FF0900149B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438E783B2865FF0900149B41 /* AppDelegate.swift */; };
 		438E783E2865FF0900149B41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438E783D2865FF0900149B41 /* SceneDelegate.swift */; };
 		438E78402865FF0900149B41 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438E783F2865FF0900149B41 /* MyTabBarController.swift */; };
@@ -83,6 +85,8 @@
 		438A16DE2871969500EC7EB1 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		438A16E22871D1C700EC7EB1 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		438A16E42871D4CF00EC7EB1 /* TitleHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		438A16E62872BD0D00EC7EB1 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		438A16E82872BF6B00EC7EB1 /* AlbumCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		438E78382865FF0900149B41 /* Musify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		438E783B2865FF0900149B41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		438E783D2865FF0900149B41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				438A16B6286DDA2600EC7EB1 /* NewReleaseCollectionViewCell.swift */,
 				438A16B8286DDA5400EC7EB1 /* FeaturedPlaylistCollectionViewCell.swift */,
 				438A16BA286DDAA900EC7EB1 /* RecommendedTrackCollectionViewCell.swift */,
+				438A16E62872BD0D00EC7EB1 /* AlbumCollectionViewCell.swift */,
 			);
 			path = HomepageCells;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 				438A16BC286DDB5E00EC7EB1 /* NewReleaseCellViewModel.swift */,
 				438A16C8286F0C8500EC7EB1 /* FeaturedPlaylistCellViewModel.swift */,
 				438A16CA286F0CD100EC7EB1 /* RecommendedTrackCellViewModel.swift */,
+				438A16E82872BF6B00EC7EB1 /* AlbumCollectionViewCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -470,6 +476,7 @@
 				438E78692866061500149B41 /* SearchResultsViewController.swift in Sources */,
 				438A16DD2871968900EC7EB1 /* HeaderView.swift in Sources */,
 				438E785F286605A200149B41 /* WelcomeViewController.swift in Sources */,
+				438A16E72872BD0D00EC7EB1 /* AlbumCollectionViewCell.swift in Sources */,
 				438A16C9286F0C8500EC7EB1 /* FeaturedPlaylistCellViewModel.swift in Sources */,
 				438E786D2866065900149B41 /* ApiCaller.swift in Sources */,
 				438E7863286605D400149B41 /* ProfileViewController.swift in Sources */,
@@ -495,6 +502,7 @@
 				438A16E52871D4CF00EC7EB1 /* TitleHeaderCollectionReusableView.swift in Sources */,
 				438E785A2866050800149B41 /* LibraryViewController.swift in Sources */,
 				438E7867286605FD00149B41 /* PlaylistViewController.swift in Sources */,
+				438A16E92872BF6B00EC7EB1 /* AlbumCollectionViewCellViewModel.swift in Sources */,
 				438E7856286604AF00149B41 /* HomeViewController.swift in Sources */,
 				438A16BD286DDB5E00EC7EB1 /* NewReleaseCellViewModel.swift in Sources */,
 				438A16CB286F0CD100EC7EB1 /* RecommendedTrackCellViewModel.swift in Sources */,

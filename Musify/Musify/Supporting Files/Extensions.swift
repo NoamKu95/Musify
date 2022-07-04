@@ -79,3 +79,19 @@ func setStatusBarColor(viewController: UIViewController, hexColor: String) {
         statusBar?.backgroundColor = UIColor.black
     }
 }
+
+// MARK: - Time Formatter
+func adaptDateTimeFormat(currentFormat: String, desiredFormat: String, timestampToAdapt: String) -> String? {
+    
+    let dateFormatterGet = DateFormatter()
+    dateFormatterGet.dateFormat = currentFormat
+
+    let dateFormatterPrint = DateFormatter()
+    dateFormatterPrint.dateFormat = desiredFormat
+    
+    if let date = dateFormatterGet.date(from: timestampToAdapt) {
+        return dateFormatterPrint.string(from: date)
+    } else {
+        return nil
+    }
+}

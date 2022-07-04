@@ -66,7 +66,7 @@ class PlaylistViewController: UIViewController {
                     switch result {
                     case .success(let model):
                         self?.viewModels = model.tracks.items.compactMap({
-                            RecommendedTrackCellViewModel(name: $0.track.name, aristName: $0.track.artists.first?.name ?? "-", artworkURL: URL(string: $0.track.album?.images.first?.url ?? ""))
+                            RecommendedTrackCellViewModel(name: $0.track.name, artistName: $0.track.artists.first?.name ?? "-", artworkURL: URL(string: $0.track.album?.images.first?.url ?? ""))
                         })
                         self?.collectionView.reloadData()
                         break

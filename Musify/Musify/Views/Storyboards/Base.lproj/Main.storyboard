@@ -356,17 +356,22 @@
                                     <constraint firstAttribute="height" constant="50" id="hdo-R7-csL"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kGA-dn-tdo" customClass="PlaylistAlbumHeaderView" customModule="Musify" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="102" width="414" height="260"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGA-dn-tdo" customClass="PlaylistAlbumHeaderView" customModule="Musify" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="110" width="414" height="250"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="83i-MA-POw"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IAE-4P-zns"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="kGA-dn-tdo" firstAttribute="trailing" secondItem="IAE-4P-zns" secondAttribute="trailing" id="AGF-ha-2JM"/>
                             <constraint firstItem="5be-HY-U1l" firstAttribute="top" secondItem="IAE-4P-zns" secondAttribute="top" id="CMk-Xv-GTb"/>
                             <constraint firstItem="5be-HY-U1l" firstAttribute="leading" secondItem="Bwk-6Z-euY" secondAttribute="leading" id="Lz8-nc-0zJ"/>
+                            <constraint firstItem="kGA-dn-tdo" firstAttribute="top" secondItem="5be-HY-U1l" secondAttribute="bottom" constant="16" id="cFV-og-olG"/>
+                            <constraint firstItem="kGA-dn-tdo" firstAttribute="leading" secondItem="IAE-4P-zns" secondAttribute="leading" id="pw5-K4-luu"/>
                             <constraint firstAttribute="trailing" secondItem="5be-HY-U1l" secondAttribute="trailing" id="wKT-4V-DJj"/>
                         </constraints>
                     </view>

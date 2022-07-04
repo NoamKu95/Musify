@@ -10,7 +10,7 @@ import UIKit
 class AlbumViewController: UIViewController {
     
     var album: Album?
-    private var viewModels = [RecommendedTrackCellViewModel]()
+    private var viewModels = [AlbumCollectionViewCellViewModel]()
     
     
     @IBOutlet weak var headerView: HeaderView!
@@ -41,7 +41,7 @@ class AlbumViewController: UIViewController {
         
         // CollectionView
         view.addSubview(collectionView)
-        collectionView.register(RecommendedTrackCollectionViewCell.self, forCellWithReuseIdentifier: RecommendedTrackCollectionViewCell.identifier)
+        collectionView.register(AlbumCollectionViewCell.self, forCellWithReuseIdentifier: AlbumCollectionViewCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -64,7 +64,7 @@ class AlbumViewController: UIViewController {
                     switch result {
                     case .success(let model):
                         self?.viewModels = model.tracks.items.compactMap({
-                            RecommendedTrackCellViewModel(name: $0.name, aristName: $0.artists.first?.name ?? "-", artworkURL: URL(string: $0.album?.images.first?.url ?? ""))
+                            AlbumCollectionViewCellViewModel(name: $0.name, artistName: $0.artists.first?.name ?? "-")
                         })
                         self?.collectionView.reloadData()
                     case .failure(let error):
@@ -87,7 +87,7 @@ extension AlbumViewController : UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendedTrackCollectionViewCell.identifier, for: indexPath) as? RecommendedTrackCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCollectionViewCell.identifier, for: indexPath) as? AlbumCollectionViewCell else {
             return UICollectionViewCell()
         }
         cell.configure(with: viewModels[indexPath.row])

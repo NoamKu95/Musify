@@ -54,7 +54,14 @@ class PlaylistAlbumHeaderView: UIView {
         } else if let album = album {
             name.text = album.name
             
+            owner.text = "\(album.total_tracks) tracks"
             image.sd_setImage(with: URL(string: album.images.first?.url ?? ""))
+            
+            if let date = adaptDateTimeFormat(currentFormat: "yyyy-MM-dd", desiredFormat: "MMM d, yyy", timestampToAdapt: album.release_date) {
+                descriptionLabel.text = "Release Date: \(date)"
+            } else {
+                descriptionLabel.text = "Release Date: \(album.release_date)"
+            }
         }
         
     }

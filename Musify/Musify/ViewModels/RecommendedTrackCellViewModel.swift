@@ -10,6 +10,6 @@ import Foundation
 struct RecommendedTrackCellViewModel {
     
     let name: String
-    let aristName: String
+    let artistName: String
     let artworkURL: URL?
 }
