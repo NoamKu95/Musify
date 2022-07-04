@@ -14,6 +14,8 @@ class NewReleaseCollectionViewCell: UICollectionViewCell {
     private var albumCoverImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.image = UIImage(systemName: "photo")
+        imageView.layer.cornerRadius = 8
+        imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleToFill
         return imageView
     }()
@@ -42,7 +44,12 @@ class NewReleaseCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .secondarySystemBackground
+        contentView.backgroundColor = .white //hexStringToUIColor(hex: "#F5F5F5")
+        contentView.layer.cornerRadius = 8
+        contentView.layer.masksToBounds = true
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor.lightGray.cgColor
+        
         contentView.addSubview(albumCoverImageView)
         contentView.addSubview(artistNameLabel)
         contentView.addSubview(tracksNumberLabel)

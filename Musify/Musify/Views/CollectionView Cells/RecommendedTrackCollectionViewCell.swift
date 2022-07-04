@@ -35,7 +35,12 @@ class RecommendedTrackCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .secondarySystemBackground
+        contentView.backgroundColor = .white
+        contentView.layer.cornerRadius = 8
+        contentView.layer.masksToBounds = true
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = hexStringToUIColor(hex: "#422A61").cgColor
+        
         contentView.addSubview(albumCoverImageView)
         contentView.addSubview(trackNameLabel)
         contentView.addSubview(artistNameLabel)
@@ -55,14 +60,14 @@ class RecommendedTrackCollectionViewCell: UICollectionViewCell {
                                            height: contentView.height-4)
         
         trackNameLabel.frame = CGRect(x: albumCoverImageView.right + 10,
-                                        y: 0,
+                                      y: 0,
                                       width: contentView.width - albumCoverImageView.right - 15,
-                                        height: contentView.height / 2)
-       
+                                      height: contentView.height / 2)
+        
         artistNameLabel.frame = CGRect(x: albumCoverImageView.right + 10,
-                                        y: contentView.height / 2,
-                                      width: contentView.width - albumCoverImageView.right - 15,
-                                        height: contentView.height / 2)
+                                       y: contentView.height / 2,
+                                       width: contentView.width - albumCoverImageView.right - 15,
+                                       height: contentView.height / 2)
     }
     
     

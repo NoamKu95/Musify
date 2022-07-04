@@ -31,7 +31,7 @@ class ProfileViewController: UIViewController {
     }
     
     func fetchUserProfile() {
-        ApiCaller.shared.getCurrentUserProfile { result in
+        ApiCaller.shared.fetchCurrentUserProfile { result in
             switch result {
             case .success(let model):
                 self.updateUI(with: model)

@@ -60,12 +60,12 @@ class HomeViewController : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //setStatusBarColor(viewController: self, hexColor: "000000")
+        setStatusBarColor(viewController: self, hexColor: "F0F0F0")
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        collectionView.frame = view.alignmentRect(forFrame: CGRect(x: 0, y: headerView.bottom, width: view.width, height: view.height-headerView.height))
+        collectionView.frame = view.alignmentRect(forFrame: CGRect(x: 0, y: headerView.bottom, width: view.width, height: view.height-headerView.height-50))
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 200).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 100).isActive = true
@@ -87,6 +87,8 @@ class HomeViewController : UIViewController {
         collectionView.register(FeaturedPlaylistCollectionViewCell.self, forCellWithReuseIdentifier: FeaturedPlaylistCollectionViewCell.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.backgroundColor = .white
+        collectionView.showsVerticalScrollIndicator = false
     }
     
     func fetchData() {
@@ -99,7 +101,7 @@ class HomeViewController : UIViewController {
         var featuredPlaylist: FeaturedPlaylistResponse?
         var recommendations: RecommendationsResponse?
         
-        ApiCaller.shared.getNewReleases { result in
+        ApiCaller.shared.fetchNewReleases { result in
             defer {
                 group.leave()
             }
@@ -112,7 +114,7 @@ class HomeViewController : UIViewController {
                 break
             }
         }
-        ApiCaller.shared.getFeaturedPlaylists { result in
+        ApiCaller.shared.fetchFeaturedPlaylists { result in
             defer {
                 group.leave()
             }
@@ -125,7 +127,7 @@ class HomeViewController : UIViewController {
                 break
             }
         }
-        ApiCaller.shared.getRecommendedGenres { result in
+        ApiCaller.shared.fetchRecommendedGenres { result in
             switch result {
                 
             case .success(let model):
@@ -136,7 +138,7 @@ class HomeViewController : UIViewController {
                         seeds.insert(random)
                     }
                 }
-                ApiCaller.shared.getRecommendations(genres: seeds) { recommenderdResult in
+                ApiCaller.shared.fetchRecommendations(genres: seeds) { recommenderdResult in
                     defer {
                         group.leave()
                     }
@@ -334,6 +336,9 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 return UICollectionViewCell()
             }
             cell.configure(with: viewModels[indexPath.row])
+            if indexPath.row % 2 == 0 {
+                cell.contentView.layer.borderColor = hexStringToUIColor(hex: "#9258CE").cgColor
+            }
             return cell
         }
     }

@@ -44,10 +44,11 @@ class CategoryViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = view.alignmentRect(forFrame: CGRect(x: 0, y: headerView.bottom, width: view.width, height: view.height-headerView.height))
+        collectionView.showsVerticalScrollIndicator = false
     }
     
     private func fetchCategoryPlaylists() {
-        ApiCaller.shared.getCategoryPlaylists(categoryID: category?.id ?? "") { [weak self] result in
+        ApiCaller.shared.fetchCategoryPlaylists(categoryID: category?.id ?? "") { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let playlists):

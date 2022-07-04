@@ -42,7 +42,7 @@ class SearchViewController: UIViewController {
     }
     
     private func fetchCategories() {
-        ApiCaller.shared.getCategories { [weak self] result in
+        ApiCaller.shared.fetchCategories { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let categories):
@@ -58,6 +58,12 @@ class SearchViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = view.alignmentRect(forFrame: CGRect(x: 0, y: searchBar.bottom, width: view.width, height: view.height-headerView.height-searchBar.height-100))
+        collectionView.showsVerticalScrollIndicator = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setStatusBarColor(viewController: self, hexColor: "F0F0F0")
     }
 }
 

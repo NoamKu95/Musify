@@ -13,13 +13,10 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     private let colors: [UIColor] = [
         .systemPink,
-        .systemBlue,
-        .systemMint,
-        .systemTeal,
-        .systemCyan,
         .systemPurple,
-        .systemGreen,
-        .systemYellow
+        .purple,
+        .cyan,
+        .systemCyan
     ]
     
     private let imageView: UIImageView = {

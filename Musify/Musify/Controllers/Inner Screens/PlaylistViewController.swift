@@ -57,11 +57,12 @@ class PlaylistViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.topAnchor.constraint(equalTo: playlistHeader.bottomAnchor, constant: 12).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        collectionView.showsVerticalScrollIndicator = false
     }
     
     private func getPlaylistData() {
         if let playlist = playlist {
-            ApiCaller.shared.getPlaylistDetails(for: playlist) { [weak self] result in
+            ApiCaller.shared.fetchPlaylistDetails(for: playlist) { [weak self] result in
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let model):

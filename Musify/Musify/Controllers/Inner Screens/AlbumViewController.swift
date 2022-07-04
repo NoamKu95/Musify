@@ -59,7 +59,7 @@ class AlbumViewController: UIViewController {
     
     private func getAlbumData() {
         if let album = album {
-            ApiCaller.shared.getAlbumDetails(for: album) { [weak self] result in
+            ApiCaller.shared.fetchAlbumDetails(for: album) { [weak self] result in
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let model):
