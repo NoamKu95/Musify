@@ -147,6 +147,42 @@ class ApiCaller {
         }
     }
     
+    public func getCategories(completionHandler: @escaping (Result<[Category],Error>) -> ()) {
+        createRequest(with: URL(string: Constants.API.REQUESTS_BASE_API_URL + "/browse/categories?limit=30"), ofType: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completionHandler(.failure(APIError.failedToGetData))
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode(CategoriesResponse.self, from: data)
+                    completionHandler(.success(result.categories.items))
+                } catch {
+                    completionHandler(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    public func getCategoryPlaylists(categoryID: String, completionHandler: @escaping (Result<[Playlist],Error>) -> ()) {
+        createRequest(with: URL(string: Constants.API.REQUESTS_BASE_API_URL + "/browse/categories/\(categoryID)/playlists?limit=30"), ofType: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completionHandler(.failure(APIError.failedToGetData))
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode(CategoryPlaylistsResponse.self, from: data)
+                    completionHandler(.success(result.playlists.items))
+                } catch {
+                    completionHandler(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+    
     private func createRequest(with url: URL?, ofType type: HTTPMethod, completiongHandler: @escaping (URLRequest) -> ()) {
         guard let apiURL = url else {
             return
