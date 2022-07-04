@@ -20,6 +20,9 @@ struct Constants {
         
         static let SETTINGS_TO_PROFILE = "settingsToProfile"
         static let PROFILE_TO_EDIT_PROFILE = "profileToEditProfile"
+        
+        static let SEARCH_TO_CATEGORY = "searchToCategory"
+        static let CATEGORY_TO_PLAYLIST = "categoryToPlaylist"
     }
     
     struct Cells {

@@ -142,6 +142,7 @@
                     <connections>
                         <outlet property="headerView" destination="7wb-J1-3Ig" id="gVd-ub-rbj"/>
                         <outlet property="searchBar" destination="Mvt-OM-jbC" id="Vwt-x3-4kY"/>
+                        <segue destination="zIS-WY-Ddd" kind="presentation" identifier="searchToCategory" modalPresentationStyle="fullScreen" id="Dku-47-ncf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYR-BJ-Etu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -409,7 +410,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gv-XP-fFY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="318.84057971014494" y="3062.9464285714284"/>
+            <point key="canvasLocation" x="319" y="3775"/>
         </scene>
         <!--Playlist View Controller-->
         <scene sceneID="8TE-4c-TgL">
@@ -452,7 +453,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YgM-zM-sJv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="3062.9464285714284"/>
+            <point key="canvasLocation" x="1017" y="3787"/>
+        </scene>
+        <!--Category View Controller-->
+        <scene sceneID="sUS-qO-xro">
+            <objects>
+                <viewController id="zIS-WY-Ddd" customClass="CategoryViewController" customModule="Musify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YZ3-Q8-b5P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UoQ-46-rLV" customClass="HeaderView" customModule="Musify" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <color key="backgroundColor" red="0.14779434869999999" green="0.16275323720000001" blue="0.40776909719999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="E2r-4L-yTn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aTl-sQ-SuB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UoQ-46-rLV" firstAttribute="leading" secondItem="YZ3-Q8-b5P" secondAttribute="leading" id="3es-eW-juv"/>
+                            <constraint firstItem="UoQ-46-rLV" firstAttribute="top" secondItem="aTl-sQ-SuB" secondAttribute="top" id="Bgr-Ft-n4B"/>
+                            <constraint firstAttribute="trailing" secondItem="UoQ-46-rLV" secondAttribute="trailing" id="nz0-wC-Ayr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="headerView" destination="UoQ-46-rLV" id="3Hk-9K-9SA"/>
+                        <segue destination="bxA-c5-DTF" kind="presentation" identifier="categoryToPlaylist" modalPresentationStyle="fullScreen" id="O5E-p6-lMO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Jr-Wf-Yz2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1915.9420289855075" y="3062.9464285714284"/>
         </scene>
         <!--Edit Profile View Controller-->
         <scene sceneID="SgO-dz-4B4">
@@ -502,6 +536,9 @@
             <point key="canvasLocation" x="-813.04347826086962" y="4500"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="O5E-p6-lMO"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="house" catalog="system" width="128" height="106"/>

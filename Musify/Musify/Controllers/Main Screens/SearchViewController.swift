@@ -18,6 +18,7 @@ class SearchViewController: UIViewController {
     }))
     
     private var categories = [Category]()
+    private var selectedCategory: Category?
     
     @IBOutlet weak var headerView: HeaderView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -103,5 +104,19 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
         let category = categories[indexPath.row]
         cell.configure(with: CategoryCollectionViewCellViewModel(title: category.name, artworkURL: URL(string: category.icons.first?.url ?? "")))
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        self.selectedCategory = categories[indexPath.row]
+        self.performSegue(withIdentifier: Constants.Segues.SEARCH_TO_CATEGORY, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.Segues.SEARCH_TO_CATEGORY && selectedCategory != nil {
+            let destinationVC = segue.destination as! CategoryViewController
+            destinationVC.category = self.selectedCategory
+            self.selectedCategory = nil
+        }
     }
 }
