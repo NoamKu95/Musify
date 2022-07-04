@@ -106,16 +106,43 @@
                                     <constraint firstAttribute="height" constant="50" id="c9R-Vn-DfQ"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJi-NW-nri">
+                                <rect key="frame" x="8" y="150" width="398" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Songs, Artists, Albums" translatesAutoresizingMaskIntoConstraints="NO" id="Mvt-OM-jbC">
+                                <rect key="frame" x="0.0" y="192" width="414" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="7Hg-OS-k8m"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XGT-ye-6oL"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="sJi-NW-nri" firstAttribute="top" secondItem="7wb-J1-3Ig" secondAttribute="bottom" constant="12" id="13S-Ok-bK2"/>
+                            <constraint firstItem="Mvt-OM-jbC" firstAttribute="top" secondItem="sJi-NW-nri" secondAttribute="bottom" constant="12" id="1rk-X3-LTz"/>
+                            <constraint firstItem="Mvt-OM-jbC" firstAttribute="trailing" secondItem="XGT-ye-6oL" secondAttribute="trailing" id="3Id-pI-c3z"/>
                             <constraint firstItem="7wb-J1-3Ig" firstAttribute="leading" secondItem="4So-B1-CJx" secondAttribute="leading" id="9hS-Mg-VKD"/>
+                            <constraint firstItem="XGT-ye-6oL" firstAttribute="trailing" secondItem="sJi-NW-nri" secondAttribute="trailing" constant="8" id="N0c-hg-5EH"/>
                             <constraint firstAttribute="trailing" secondItem="7wb-J1-3Ig" secondAttribute="trailing" id="Q3X-8n-ofZ"/>
+                            <constraint firstItem="sJi-NW-nri" firstAttribute="leading" secondItem="XGT-ye-6oL" secondAttribute="leading" constant="8" id="duO-Fy-2Y1"/>
                             <constraint firstItem="7wb-J1-3Ig" firstAttribute="top" secondItem="XGT-ye-6oL" secondAttribute="top" id="pap-hA-pd6"/>
+                            <constraint firstItem="Mvt-OM-jbC" firstAttribute="leading" secondItem="XGT-ye-6oL" secondAttribute="leading" id="s6f-RX-GW0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cMd-vl-ZCD"/>
+                    <connections>
+                        <outlet property="headerView" destination="7wb-J1-3Ig" id="gVd-ub-rbj"/>
+                        <outlet property="searchBar" destination="Mvt-OM-jbC" id="Vwt-x3-4kY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYR-BJ-Etu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
